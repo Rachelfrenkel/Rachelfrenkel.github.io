@@ -1,0 +1,106 @@
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+body,html {
+  margin:0;
+  padding:0;
+}
+
+#scroll-caret-btn {
+	z-index: 2;
+	color: white;
+	opacity: .8;
+	padding-bottom: 2px;
+	align-self: flex-end;
+}
+
+.cover-container {
+	background: url(../images/cropped-cover-photo.png) no-repeat 50% 50%;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	z-index: 1;
+	@include flexbox();
+	justify-content: center;
+}
+
+.cover-square {
+	height: 100% ;
+	width: 100%;
+	position: absolute;
+	background-color: blue;
+	z-index: 11;
+	text-align: center;
+	margin: auto;
+	vertical-align: middle;
+	z-index: 2;
+}
+
+.grid {
+	height: 100vh;
+	width: 100vw;
+	@include flexbox();
+	flex-direction: column;
+	justify-content: center;
+}
+
+.grid-row {
+	@include flexbox();
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.tile {
+	height: 40vh;
+	width: 40vh;
+	background-color: purple;
+	margin: 20px;
+	@include flexbox();
+	align-items: center;
+	justify-content: center;	
+}
+
+.tile-title {
+	color: white;
+	font-size: 2em;
+	max-width: 50%;
+	text-align: center;
+}
+
+/* Tile Backgrounds */
+#work-experience {
+	background: url(../images/building.pdf) no-repeat;
+	background-size: cover;
+}
+
+#programming-languages {
+	background: url(../images/coding\ comp\ 2.pdf) no-repeat;
+	background-size: cover;	
+}
+
+#courses {
+	background: url(../images/book.pdf) no-repeat;
+	background-size: cover;
+}
+
+#interests {
+	background: url(../images/canoes.pdf) no-repeat;
+	background-size: cover;
+}
+
+#tufts-orgs {
+	background: url(../images/climbing\ mtn.pdf) no-repeat;
+	background-size: cover;
+}
+
+#contact {
+	background: url(../images/working\ bw.pdf) no-repeat;
+	background-size: cover;
+}
