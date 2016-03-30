@@ -13,11 +13,20 @@ $("#scroll-caret-btn").click(function() {
 var waypoint = new Waypoint({
   element: $('.grid'),
   handler: function() {
-    console.log("animating grid");
-    $('.tile').addClass("animated pulse");
+    $(".tile").addClass("animated pulse");
+    setTimeout(function(){
+      $(".tile").removeClass('pulse');
+    }, 900); 
   }
-})
+});
 
+$(".tile").mouseenter(function() {
+	$(this).addClass("pulse");	
+});
+
+$(".tile").mouseleave(function() {
+	$(this).removeClass("pulse");	
+});
 
 });
 

@@ -1,6 +1,7 @@
 body, html {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: 'Lato', sans-serif; }
 
 #scroll-caret-btn {
   z-index: 2;
@@ -11,6 +12,9 @@ body, html {
 
 .cover-container {
   background: url(../images/cropped-cover-photo.png) no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -58,45 +62,46 @@ body, html {
 .tile {
   height: 40vh;
   width: 40vh;
-  background-color: purple;
-  margin: 20px;
+  margin: 1.9rem;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  overflow: auto;
+  justify-content: center;
+  text-align: center; }
 
 .tile-title {
   color: white;
-  font-size: 2em;
-  max-width: 50%;
-  text-align: center; }
+  font-size: 4vh;
+  font-weight: 900;
+  max-width: 50%; }
 
 /* Tile Backgrounds */
 #work-experience {
-  background: url(../images/building.pdf) no-repeat;
+  background-image: url("../images/work-experience.pdf");
   background-size: cover; }
 
 #programming-languages {
-  background: url(../images/coding\ comp\ 2.pdf) no-repeat;
+  background-image: url("../images/programming-languages.pdf");
   background-size: cover; }
 
 #courses {
-  background: url(../images/book.pdf) no-repeat;
+  background-image: url("../images/courses.pdf");
   background-size: cover; }
 
 #interests {
-  background: url(../images/canoes.pdf) no-repeat;
+  background-image: url("../images/interests.pdf");
   background-size: cover; }
 
 #tufts-orgs {
-  background: url(../images/climbing\ mtn.pdf) no-repeat;
+  background-image: url("../images/tufts-orgs.pdf");
   background-size: cover; }
 
 #contact {
-  background: url(../images/working\ bw.pdf) no-repeat;
+  background-image: url("../images/contact.pdf");
   background-size: cover; }
 
 /*# sourceMappingURL=main.css.map */

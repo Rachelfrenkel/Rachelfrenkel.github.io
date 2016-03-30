@@ -1,0 +1,63 @@
+/* General link styles */
+.link {
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	/*font-size: 8em;*/
+	line-height: 1;
+	/*color: #9e9ba4;*/
+	display: inline-block;
+}
+
+/* Urpi */
+.link--urpi {
+
+	-webkit-transition: color 0s 0.5s;
+	transition: color 0s 0.5s;
+}
+
+.link--urpi:hover {
+	color: transparent;
+	-webkit-transition: none;
+	transition: none;
+}
+
+.link--urpi::before,
+.link--urpi::after {
+	content: attr(data-letters);
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*color: #e78383;*/
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: color 0.5s, -webkit-transform 0.5s;
+	transition: color 0.5s, transform 0.5s;
+}
+
+.link--urpi::before {
+	-webkit-clip-path: url(#cp_up); 
+	clip-path: url(../index.html#cp_up);
+}
+
+.link--urpi::after {
+	-webkit-clip-path: url(#cp_down); 
+	clip-path: url(../index.html#cp_down);
+}
+
+.link--urpi:hover::before,
+.link--urpi:hover::after {
+	color: #fff;
+	-webkit-transition: color 0.5s, -webkit-transform 0.5s;
+	transition: color 0.5s, transform 0.5s;
+}
+
+.link--urpi:hover::before {
+	-webkit-transform: translate3d(4px,1px,0);
+	transform: translate3d(4px,1px,0);
+}
+
+.link--urpi:hover::after {
+	-webkit-transform: translate3d(-4px,-1px,0);
+	transform: translate3d(-4px,-1px,0);
+}
