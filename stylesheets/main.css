@@ -3,15 +3,65 @@ body, html {
   padding: 0;
   font-family: 'Lato', sans-serif; }
 
+@media screen and (max-width: 840px){
+  .grid-row {
+    flex-direction: column;
+    align-items: center;
+    height: 85vh; 
+  }
+  .grid {
+    flex-direction: column;
+    height: 100%; 
+  }
+  .tile {
+    width: 85%; 
+  }
+  .tile-title {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media screen and (min-width: 841px) and (max-width: 1030px){
+  .grid {
+    flex-direction: row;
+    height: 100vh;
+  }
+  .grid-row {
+    flex-direction: column;
+  }
+  .tile {
+    width: 45vh;
+  }
+  .tile-title {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+}
+
+@media screen and (min-width: 1031px){
+  .grid-row {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .grid {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .tile {
+    width: 45vh;
+  }  
+}
+
 #scroll-caret-btn {
   z-index: 2;
   color: white;
   opacity: .8;
-  padding-bottom: 2px;
-  align-self: flex-end; }
+  margin-bottom: 2rem;
+  align-self: flex-end; 
+  cursor: pointer;}
 
 .cover-container {
-  background: url(../images/cropped-cover-photo.png) no-repeat 50% 50%;
+  background: url(../images/cropped-cover-photo.jpg) no-repeat 50% 50%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -39,14 +89,12 @@ body, html {
   z-index: 2; }
 
 .grid {
-  height: 100vh;
   width: 100vw;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: column;
   justify-content: center; }
 
 .grid-row {
@@ -55,13 +103,42 @@ body, html {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end; }
+  justify-content: center; }
+
+/* Tile Backgrounds */
+#work-experience {
+  background: url(../images/work-experience.jpg);
+  background-size: cover; }
+
+#aboutme {
+  background: url(../images/aboutme-swing.jpg);
+  background-size: cover; }
+
+#programming-languages {
+  background-image: url(../images/programming-languages.jpg);
+  background-size: cover; }
+
+#courses {
+  background-image: url(../images/courses.jpg);
+  background-size: cover; }
+
+#interests {
+  background-image: url(../images/interests.jpg);
+  background-size: cover; }
+
+#tufts-orgs {
+  background-image: url(../images/tufts-orgs.jpg);
+  background-size: cover; }
+
+#contact {
+  background-image: url(../images/contact.jpg);
+  background-size: cover; }
+
 
 .tile {
-  height: 40vh;
-  width: 40vh;
+  background-color: lightgray;
+  cursor: pointer;
+  height: 45vh;
   margin: 1.9rem;
   display: -webkit-box;
   display: -moz-box;
@@ -71,37 +148,79 @@ body, html {
   align-items: center;
   overflow: auto;
   justify-content: center;
-  text-align: center; }
+  text-align: center;
+  transition: all .3s ease; }
+
+.expanded {
+  width: 160vh;
+  height: 80vh;
+  /*transition: all 2s ease;*/
+  position: relative; }
 
 .tile-title {
   color: white;
-  font-size: 4vh;
+  font-size: 2em;
   font-weight: 900;
-  max-width: 50%; }
+  padding: 0 1em 0 1em;}
 
-/* Tile Backgrounds */
-#work-experience {
-  background-image: url("../images/work-experience.pdf");
-  background-size: cover; }
+.tile-detail {
+  display: none;
+  position: absolute;
+  background: lightgray;
+  color: black;
+  font-size: 2vh;
+  opacity: 0.9;
+  min-height: 50%;
+  min-width: 50%;
+  max-width: 75%;
+  font-weight: normal;
+ }
 
-#programming-languages {
-  background-image: url("../images/programming-languages.pdf");
-  background-size: cover; }
+ .contact-info {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  min-height: 20em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+ }
 
-#courses {
-  background-image: url("../images/courses.pdf");
-  background-size: cover; }
+ .contact-btn {
+  width: 50%;
+ }
 
-#interests {
-  background-image: url("../images/interests.pdf");
-  background-size: cover; }
+ .aboutme-text {
+  padding: 2em 2em 0 2em;
+  line-height: 2em;
+ }
 
-#tufts-orgs {
-  background-image: url("../images/tufts-orgs.pdf");
-  background-size: cover; }
+ #passions-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+ }
 
-#contact {
-  background-image: url("../images/contact.pdf");
-  background-size: cover; }
+ .passion-topic {
+  margin: 2em;
+ }
 
-/*# sourceMappingURL=main.css.map */
+ .passions-list-column {
+  margin-top: 2em;
+ }
+
+ .passions-img {
+  width: 10em;
+ }
+
+object {
+  width: 60vw;
+  height: 70vh;
+}

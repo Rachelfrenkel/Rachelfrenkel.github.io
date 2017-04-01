@@ -21,12 +21,50 @@ var waypoint = new Waypoint({
 });
 
 $(".tile").mouseenter(function() {
-	$(this).addClass("pulse");	
+	if (!$(this).hasClass("expanded")) {
+		$(this).addClass("pulse");	
+	}
 });
 
 $(".tile").mouseleave(function() {
 	$(this).removeClass("pulse");	
 });
+
+$(".tile").click(function() {
+	if ($(this).hasClass("expanded")) {
+
+		$(this).addClass("fadeOutUp");
+
+		$(this).removeClass("expanded");
+		setTimeout(function(){
+			$(".tile").show();
+
+			$('.tile-detail').toggle();
+			$('.tile-title').toggle();
+		    
+		    $(".tile").removeClass('fadeOutUp');
+	 	 }, 900);
+
+	} else {
+
+		// hide all other tiles
+		$(".tile").toggle();
+		$(this).toggle();
+
+		$(this).addClass("expanded animated fadeInDown");
+		$(this).removeClass("pulse");	
+
+		$('.tile-detail').toggle();
+		$('.tile-title').toggle();
+	    setTimeout(function(){
+	      $(".tile").removeClass('fadeInDown');
+	    }, 900); 		
+
+		
+	}
+});
+
+
 
 });
 
