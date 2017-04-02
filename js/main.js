@@ -31,6 +31,10 @@ $(".tile").mouseleave(function() {
 });
 
 $(".tile").click(function() {
+	$('.grid-row').toggle();
+	$(this).parent().toggle();
+
+	
 	if ($(this).hasClass("expanded")) {
 
 		$(this).addClass("fadeOutUp");

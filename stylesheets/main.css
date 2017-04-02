@@ -3,55 +3,6 @@ body, html {
   padding: 0;
   font-family: 'Lato', sans-serif; }
 
-@media screen and (max-width: 840px){
-  .grid-row {
-    flex-direction: column;
-    align-items: center;
-    height: 85vh; 
-  }
-  .grid {
-    flex-direction: column;
-    height: 100%; 
-  }
-  .tile {
-    width: 85%; 
-  }
-  .tile-title {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-}
-
-@media screen and (min-width: 841px) and (max-width: 1030px){
-  .grid {
-    flex-direction: row;
-    height: 100vh;
-  }
-  .grid-row {
-    flex-direction: column;
-  }
-  .tile {
-    width: 45vh;
-  }
-  .tile-title {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-
-}
-
-@media screen and (min-width: 1031px){
-  .grid-row {
-    flex-direction: row;
-    align-items: flex-end;
-  }
-  .grid {
-    flex-direction: column;
-    height: 100vh;
-  }
-  .tile {
-    width: 45vh;
-  }  
-}
-
 #scroll-caret-btn {
   z-index: 2;
   color: white;
@@ -174,6 +125,7 @@ body, html {
   min-width: 50%;
   max-width: 75%;
   font-weight: normal;
+  padding: 1em;
  }
 
  .contact-info {
@@ -223,4 +175,76 @@ body, html {
 object {
   width: 60vw;
   height: 70vh;
+}
+
+
+@media screen and (max-width: 840px){
+  .grid-row {
+    flex-direction: column;
+    align-items: center;
+    height: 85vh; 
+  }
+  .grid {
+    flex-direction: column;
+    height: 100%; 
+  }
+  .tile {
+    width: 85%; 
+  }
+  .tile-title {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .tile-detail {
+    width: 100%;
+  }
+  #aboutme .tile-detail, #interests .tile-detail {
+    width: 90vw;
+    height: inherit;
+    overflow: auto;
+    margin: 20px 0 20px 0;    
+  }
+  #passions-list {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 841px) and (max-width: 1030px){
+  .grid {
+    flex-direction: row;
+    height: 100vh;
+  }
+  .grid-row {
+    flex-direction: column;
+  }
+  .tile {
+    width: 45vh;
+  }
+  .tile-title {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .expanded {
+    width: 160vh;
+    height: 80vh;
+    /*transition: all 2s ease;*/
+    position: relative; }  
+
+}
+
+@media screen and (min-width: 1031px){
+  .grid-row {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .grid {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .tile {
+    width: 45vh;
+  }  
+  .expanded {
+    width: 160vh;
+    height: 80vh;
+    /*transition: all 2s ease;*/
+    position: relative; }
 }
